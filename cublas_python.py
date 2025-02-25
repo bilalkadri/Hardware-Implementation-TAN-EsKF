@@ -13,7 +13,7 @@ import numpy as np
 import cupy as cp
 import time
 
-N = 10000  # Matrix size
+N = 8000 # Matrix size
 
 # CPU (NumPy)
 A_cpu = np.random.rand(N, N).astype(np.float32)
