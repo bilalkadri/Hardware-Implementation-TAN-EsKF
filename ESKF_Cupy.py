@@ -22,7 +22,7 @@ import cupy as cp
 # # % INS sensor data into Latitude, Longitude, Altitude (LLA) format.
 # # %  INS data consist of linear acceleration i.e.(ax,ay and
 # # % az) and angular velocity i.e.(wx,wy,wz)
-LLA=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\LLA.mat')
+LLA=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/LLA.mat')
 # # print(type(LLA))
 # """ for key, value in LLA.items():
 #     print(key, ' : ', value) """
@@ -47,7 +47,7 @@ LLA_Vn=LLA["Vn"]
 # #print(LLA_t)
 # 
 # # % latitude and longituide reference generated from mission planner and used in Xplane
-Xplane_Pos=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\Xplane_Pos.mat')
+Xplane_Pos=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/Xplane_Pos.mat')
 Xplane_Pos_Lat_ref=Xplane_Pos["Lat_ref"]
 Xplane_Pos_Long_ref=Xplane_Pos["Long_ref"]
 # 
@@ -66,7 +66,7 @@ Xplane_Pos_Long_ref=Xplane_Pos["Long_ref"]
 # % --------------------------------------
 # % This data (AccForces.mat) will be later used in 'A' i.e. System Matrix """
 # 
-AccForces=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\AccForces.mat')
+AccForces=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/AccForces.mat')
 # # Variable is An [ 3 x 2998]
 AccForces_An=AccForces["An"]
 # """ print("The type is :", type(AccForces_An))
@@ -77,12 +77,12 @@ AccForces_An=AccForces["An"]
 # % the resulting variable is DEM_Z2,. Original DEM has a size of [3600x
 # % 3600] whereas the DEM_ROI_sub.mat has a size of [695x1957] (Variable name is DEM_Z2) """
 # 
-DEM_ROI_sub=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\DEM_ROI_sub.mat')
+DEM_ROI_sub=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/DEM_ROI_sub.mat')
 DEM_ROI_sub_DEM_Z2=DEM_ROI_sub["DEM_Z2"]
 # 
 # #  % Lat, Long locations of the corresponding height (dimension of Seleceted_DEM = dimension of DEM_Z2)
 # # % The size is [695x1957], and it is a cell array
-Selected_DEM=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\Selected_DEM.mat')
+Selected_DEM=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/Selected_DEM.mat')
 # """ print("The type is :", type(Selected_DEM_Matlab))
 #     for key, value in Selected_DEM_Matlab.items():
 #     print(key, ' : ', value) """
@@ -206,7 +206,7 @@ hins = LLA_h #% Remember, hins has already been initialized i.e. the height from
 # 
 # %% Contains the Data from the X-Plane [63735 x 18]
 # The mat file name is D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\DataV4.mat, the variable name is also DataV4"""
-DataV4=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\DataV4.mat')
+DataV4=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/DataV4.mat')
 DataV4_DataV4=DataV4["DataV4"]
 # """ print("The type of DataV4_DataV4 is:",type(DataV4_DataV4))
 # print("The shape of DataV4_DataV4 is:",np.shape(DataV4_DataV4))
@@ -228,7 +228,7 @@ Data =DataV4_DataV4[1:2001,:] # %This is the data that has been selected for pre
 # % Obtain the Radar Heights
 # %--------------------------- """
 # # The mat file name is GroundData.mat, the variable name is grounddata
-GroundData=scipy.io.loadmat('D:\PeerJ GPU Paper Python Code\Hardware-Implementation-TAN-EsKF\GroundData.mat')
+GroundData=scipy.io.loadmat('/home/bilal/Hardware-Implementation-TAN-EsKF/GroundData.mat')
 # #load GroundData.mat #%[63735 x 1] obtained from X-Plane
 GroundData_grounddata=GroundData["grounddata"]
 # 
