@@ -56,11 +56,13 @@ plt.show()
 x = [1, 2, 3, 4,5,6,7,8,9,10]
 # y1 = [0.3,0.32,0.311,0.312,0.312,0.313,0.311,0.30,0.311,0.322]
 y1 = [0.217, 0.211, 0.211, 0.207, 0.212, 0.207, 0.212, 0.208, 0.210, 0.233]
-y2 = [0.61, 0.612,0.614,0.613,0.614,0.911,1.11,1.05,0.95,0.7]
+y2 = [0.61, 0.612,0.614,0.613,0.614,0.611,0.611,0.615,0.605,0.607]
+y3 = [0.8869540691375732,0.771143913269043,0.7581162452697754,0.7637484073638916,0.7414412498474121,0.732914924621582,0.7445034980773926,0.733870267868042,0.7385869026184082,0.7532660961151123]
 plt.figure(figsize=(900/100, 900/100), dpi=100)  # 900x900 pixels
-plt.title("CPU and GPU Time Comparison for ESKF prediction")
-plt.plot(x, y1,label="gpu time", color='blue',marker="s")
-plt.plot(x, y2,label="cpu time", color='red',marker="*")
+plt.title("Computation time Comparison for ESKF prediction")
+plt.plot(x, y1,label="GPU time", color='red',marker="s")
+plt.plot(x, y2,label="CPU time", color='blue',marker="*")
+plt.plot(x, y3,label="NVIDIA Jetson Xavier time", color='green',marker="*")
 plt.xlabel('Iteration Number')
 plt.ylabel('Execution Time per Data Point ESKF')
 plt.grid(True, linestyle='--', alpha=0.7)  # Add grid lines (dashed, slightly transparent)
